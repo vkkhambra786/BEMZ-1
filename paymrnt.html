@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: #eceff1;
+    }
+    #main {
+      /* border: 1px solid red;*/
+      width: 500px;
+      height: 800px;
+      margin-top: 70px;
+      margin-left: 3%;
+    }
+    #cs {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    #main1 {
+      width: 90%;
+      height: 90%;
+      /*  border: 1px solid green;*/
+      margin: auto;
+      margin-top: -4%;
+    }
+    input {
+      width: 94%;
+      padding: 12px;
+    }
+    #cc {
+      background-color: black;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    #wor {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 9%;
+    }
+    #shipp {
+      width: 80%;
+      margin-top: 3%;
+      border: 1px solid gray;
+      margin-left: 9%;
+      height: 50px;
+      border-radius: 4px;
+      padding-top: 5px;
+      padding-left: 5px;
+    }
+    #payy {
+      width: 80%;
+      border: 1px solid gray;
+      height: 60px;
+      margin: auto;
+      margin-top: 10px;
+    }
+    #pay1 {
+      display: flex;
+    }
+    .p > input {
+      font-size: 28px;
+    }
+    #total {
+      text-align: center;
+      margin-top: 3%;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #total1 {
+      font-weight: bold;
+      text-align: center;
+      font-size: 27px;
+      margin-top: 2%;
+    }
+    #total2 {
+      width: 98%;
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+    #butt {
+      width: 200px;
+      height: 30px;
+      /*  border: 1px solid blue;*/
+      margin-left: 70%;
+      margin-top: -60%;
+      display: flex;
+    }
+  </style>
+  <body>
+    <h2 style="text-align: center">Order Conformation Page</h2>
+
+    <div id="cs"><a href="outlet.html">< Continue shopping</a></div>
+    <div id="main">
+      <h4 style="margin-left: 4%; font-size: 18px">Your Information</h4>
+      <div id="main1">
+        <form action="">
+          <input type="text" id="country" placeholder="Enter Your Country" />
+          <input type="email" id="email" placeholder="Email" />
+          <input type="text" id="pincode" placeholder="Zip code" />
+          <input type="text" id="name" placeholder="Enter Your Name" />
+          <input type="text" id="address" placeholder="Address" />
+          <input type="text" id="city" placeholder="City" />
+          <input type="text" id="state" placeholder="State" />
+          <input type="text" id="mobile" placeholder="Mobile Number" />
+        </form>
+        <button onclick="cbc()" id="cc">Continue</button>
+        <div id="wor">Shipping</div>
+        <div id="shipp">
+          Please Complete Your Shipping address <br />
+          <u> Change Address </u>
+        </div>
+        <div id="payy">
+          <div id="pay1">
+            <div class="p"><input type="checkbox" /></div>
+            <div>Join our mailing list and enjoy exclusive special offers.</div>
+          </div>
+          <div id="pay1">
+            <div><input type="checkbox" name="" id="" /></div>
+            <div>I acknowledge and agree to Klarna's Privacy Policy</div>
+          </div>
+        </div>
+
+        <div id="total">Total including Delivery</div>
+        <div id="total1">$265.00</div>
+        <button onclick="pay()" id="total2">Pay Order</button>
+      </div>
+    </div>
+    <div id="butt">
+      <a href="signup.html"> <button>SIgnUP</button></a>
+      <a href="signin.html"> <button>SignIn</button></a>
+    </div>
+  </body>
+  <script>
+    function cbc() {
+      alert("Your All Details are Submitted sucessfully");
+    }
+
+    function pay() {
+      alert("Your Payment is Sucessful");
+    }
+  </script>
+</html>

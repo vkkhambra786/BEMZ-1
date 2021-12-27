@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #products {
+        display: grid;
+        grid-template-columns: repeat(1, 25%);
+        grid-gap: 5%;
+      }
+      .lastdiv {
+        display: flex;
+        width: 500px;
+        height: 130px;
+        /* border: 2px solid purple;*/
+        margin: auto;
+      }
+      .imagee {
+        width: 100%;
+        height: 100%;
+      }
+      .imagee:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+      }
+      .divs {
+        /* border: 1px solid green;*/
+        width: 150px;
+        height: 100px;
+        margin-top: 12px;
+      }
+      .divs1 {
+        margin-left: 10px;
+      }
+      .prodname {
+        font-weight: bold;
+        margin-left: -7px;
+      }
+      .prodprice {
+        color: red;
+        margin-left: 170px;
+        margin-top: -24px;
+        font-size: 20px;
+      }
+      #total {
+        width: 300px;
+        /*border: 2px solid red;*/
+        height: 300px;
+        margin-left: 15%;
+        margin-top: 10%;
+      }
+      .showprice {
+        margin-left: 60%;
+        margin-top: -14%;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .checkprice {
+        margin-top: 40%;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .usecoupon {
+        width: 98%;
+        height: 40px;
+        /* border: 2px solid purple;*/
+        margin-top: 3%;
+        display: flex;
+        margin-left: auto;
+      }
+      .input {
+        width: 50%;
+        height: 88%;
+      }
+      .copbutn {
+        width: 47%;
+        margin-left: 1%;
+        border-color: black;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+      }
+      .invalid {
+        color: red;
+        margin-top: -54%;
+        font-size: 26px;
+      }
+      #main {
+        display: flex;
+        /* border: 3px solid black;
+        height: 1000px; */
+      }
+      .lastvochdiv {
+        width: 400px;
+        height: 400px;
+        border: 5px solid green;
+        margin-left: 50%;
+        margin-top: -60%;
+        position: fixed;
+      }
+      .lastcheckout {
+        margin-top: 150px;
+        padding: 10px;
+        width: 300px;
+
+        background-color: black;
+        color: white;
+      }
+      .lastcheckout:hover {
+        cursor: pointer;
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ADD TO CART IS WORKING</h1>
+
+    <div id="main">
+      <div id="products"></div>
+
+      <div id="total"></div>
+    </div>
+
+    <div id="emrge"></div>
+  </body>
+  <script>
+    let pusprice = [];
+    let cart = JSON.parse(localStorage.getItem("BEMZ"));
+    console.log("cart--", cart);
+    let s;
+    let total;
+    let parent = document.getElementById("products");
+
+    function showProduct() {
+      cart.forEach(function (el) {
+        let divs = document.createElement("div");
+        divs.setAttribute("class", "divs");
+
+        let image = document.createElement("img");
+        image.setAttribute("class", "imagee");
+        image.src = el.img;
+
+        let divs1 = document.createElement("div");
+        divs1.setAttribute("class", "divs1");
+
+        let matrial = document.createElement("p");
+        matrial.setAttribute("class", "matrial");
+        matrial.textContent = el.material;
+
+        let prodnaame = document.createElement("p");
+        prodnaame.setAttribute("class", "prodname");
+        prodnaame.textContent = el.name;
+
+        let prodprice = document.createElement("p");
+        prodprice.setAttribute("class", "prodprice");
+        prodprice.textContent = "US$" + el.price;
+
+        let remove = document.createElement("p");
+        remove.textContent = "Remove";
+        remove.addEventListener("click", REMOVE);
+
+        divs.append(image);
+        divs1.append(prodnaame, matrial, remove, prodprice);
+
+        function REMOVE() {
+          let contt = document.getElementById("products");
+          let parag = document.querySelectorAll(".lastdiv");
+
+          for (var i = 0; i < parag.length; i++) {
+            //  if (i % 3 == 0) {
+            contt.removeChild(parag[i]);
+            // }
+          }
+        }
+
+        let lastdiv = document.createElement("div");
+        lastdiv.setAttribute("class", "lastdiv");
+        lastdiv.append(divs, divs1);
+
+        parent.append(lastdiv);
+
+        let PRICE = Number(el.price);
+
+        totalprice(PRICE);
+        // total.append(checkout);
+      });
+
+      // console.log(PRICE);
+
+      function totalprice(PRICE) {
+        // console.log(PRICE);
+        pusprice.push(PRICE);
+        // console.log(pusprice);
+        s = 0;
+        for (var i = 0; i < pusprice.length; i++) {
+          s = s + pusprice[i];
+        }
+      }
+      console.log(s);
+      let checkout = document.createElement("div");
+      checkout.setAttribute("class", "checkout");
+
+      let checkprice = document.createElement("p");
+      checkprice.setAttribute("class", "checkprice");
+      checkprice.textContent = "PRICE :";
+
+      let showprice = document.createElement("p");
+      showprice.setAttribute("class", "showprice");
+      showprice.textContent = "US$" + s.toFixed(2);
+      // document.body.append(showprice);
+      console.log("shi", s);
+      let usecoupon = document.createElement("div");
+      usecoupon.setAttribute("class", "usecoupon");
+
+      var input = document.createElement("input");
+      input.setAttribute("type", "text");
+      input.setAttribute("class", "input");
+
+      let lastvocherdiv = document.createElement("div");
+      lastvocherdiv.setAttribute("class", "lastvochdiv");
+      document.body.append(lastvocherdiv);
+
+      let couponbutton = document.createElement("button");
+      couponbutton.setAttribute("class", "copbutn");
+      couponbutton.textContent = "Apply Coupon";
+      couponbutton.addEventListener("click", applyVocher);
+
+      let invalid = document.createElement("div");
+      invalid.setAttribute("class", "invalid");
+      total = document.getElementById("total");
+      // let showprice = document.createElement("p");
+      function applyVocher() {
+        showprice.setAttribute("class", "showprice");
+        // showprice.textContent = s;
+        if (input.value == "MASAI500") {
+          showprice.textContent = "US$" + (s - 300).toFixed(2);
+          invalid.textContent = "Apply Vocher Succefully";
+          invalid.style.color = "green";
+          //console.log("Ss", s);
+        } else {
+          invalid.textContent = "Invalid Promo Code";
+          invalid.style.color = "red";
+        }
+      }
+      usecoupon.append(input, couponbutton);
+
+      let lastcheck = document.createElement("button");
+      lastcheck.textContent = "GO TO CHECKOUT";
+      lastcheck.setAttribute("class", "lastcheckout");
+      lastcheck.addEventListener("click", next);
+
+      function next() {
+        //alert("REES");
+        window.location.href = "paymrnt.html";
+      }
+
+      checkout.append(usecoupon, checkprice, showprice, invalid, lastcheck);
+      total.append(checkout);
+      lastvocherdiv.append(total);
+    }
+
+    showProduct();
+  </script>
+</html>

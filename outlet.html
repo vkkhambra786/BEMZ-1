@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outlet</title>
+    <style>
+      body {
+        background-color: #efebe9;
+      }
+      #firstout {
+        width: 600px;
+        height: 350px;
+        /* border: 1px solid green;*/
+
+        margin: 50px auto;
+      }
+      #ouh1 {
+        text-align: center;
+        font-size: 52px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        color: #009688;
+      }
+      #outline {
+        font-size: 21px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #inputt {
+        width: 98%;
+        height: 60px;
+        /* border: 1px solid red;*/
+        margin-top: 30px;
+        display: flex;
+      }
+      #inputt > select {
+        width: 96%;
+        height: 45px;
+        margin: auto;
+        margin: 1%;
+      }
+      .opb {
+        font-weight: bold;
+      }
+      select.cars1 {
+        overflow: scroll;
+      }
+      #products {
+        display: grid;
+        grid-template-columns: repeat(4, 21%);
+        height: 340px;
+        grid-gap: 2%;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .dataimg {
+        width: 280px;
+        height: 200px;
+      }
+      .dataimg:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+      }
+      .divs {
+        background-color: white;
+        height: 390px;
+      }
+      .matrial {
+        margin-top: -9px;
+        margin-left: 4%;
+      }
+      .prodname {
+        margin-left: 4%;
+        font-weight: bold;
+        margin-top: -5px;
+      }
+      .prodname:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+      }
+      .prodprice {
+        margin-left: 4%;
+        color: red;
+        font-size: 20px;
+        margin-top: -4px;
+      }
+      .addtocart {
+        text-align: center;
+        margin-top: -10px;
+        margin-left: 4%;
+        width: 253px;
+        padding: 8px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border-color: black;
+      }
+      .addtocart:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>.</div>
+    <div id="firstout">
+      <h1 id="ouh1">OUTLET</h1>
+      <div id="outline">
+        Save up to 70% + free shipping on all orders over $150. Ready-made for
+        rapid delivery.
+      </div>
+      <div id="inputt">
+        <select name="cars" class="cars1">
+          <option class="opb">FILTER BY IKEA SERIES</option>
+          <option value="volvo">ABELVAR</option>
+          <option value="saab">ANGBY</option>
+          <option value="opel">BACKA</option>
+          <option value="audi">BACKABRO</option>
+          <option value="volvo">BADALEN</option>
+          <option value="saab">BARKABY</option>
+          <option value="opel">BEDDINGE</option>
+          <option value="audi">BOROY</option>
+          <option value="volvo">DELAKTIG</option>
+          <option value="saab">EKTORP</option>
+          <option value="opel">FARLOV</option>
+          <option value="audi">HARRY</option>
+        </select>
+        <select name="cars" id="cars">
+          <option class="opb">FILTER BY CATEGORY</option>
+          <option value="volvo">Armchair covers</option>
+          <option value="saab">Armrest Protectors</option>
+          <option value="opel">Bean bag covers</option>
+          <option value="audi">Chair covers</option>
+          <option value="">Curtains</option>
+          <option value="">Cushion covers</option>
+          <option value="">Footstool covers</option>
+          <option value="">Sofa covers</option>
+        </select>
+      </div>
+    </div>
+    <a href="afteroulet.html"> <button>Cartpage</button></a>
+    <a href="landing.html"> <button>Home</button></a>
+    <div id="products"></div>
+  </body>
+  <script>
+    let data = [
+      {
+        material: "Zaragoza Vintage Velvet by Designers Guild -Pebble",
+        name: "SODERHAMN 3 SEATER SECTION COVER",
+        price: "440.30",
+        img: "https://images.bemz.com/productImage/SOD2-DG3016-OUTLET144.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Tegner Melange -Sage Brown",
+        name: "SODHERMAN CHAISE LONGUE COVER",
+        price: "119.70",
+        img: "https://images.bemz.com/productImage/SOD8-T172-OUTLET321.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Teddy - Taupe",
+        name: "SODERHAMN CHASE LONGUE COVER",
+        price: "265.30",
+        img: "https://images.bemz.com/productImage/SOD6-TED217-OUTLET100.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Teddy - Taupe",
+        name: "KLIPPAN 2 SEATER SOFA COVER",
+        price: "195.30",
+        img: "https://images.bemz.com/productImage/KLI1-TED217-OUTLET64.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Brunna Melange -Ink Blue",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "164.50",
+        img: "https://images.bemz.com/productImage/SOD8-RE153-OUTLET93.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Panama Cotton -Lead",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "59.70",
+        img: "https://images.bemz.com/productImage/SOD6-E1117-OUTLET313.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Panama Cotton -Deep Navy Blue",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "98.00",
+        img: "https://images.bemz.com/productImage/SOD8-T123-OUTLET156.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Belgian Linen Blend -Absolute",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "164.50",
+        img: "https://images.bemz.com/productImage/SOD8-S150-OUTLET126.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Simply Linen -Chalk",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "174.30",
+        img: "https://images.bemz.com/productImage/SOD8-SL172-OUTLET103.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Regular Fit, Panama Cotton, Caffe Latte",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "102.00",
+        img: "https://images.bemz.com/productImage/SOD8-T105-OUTLET105.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Regular Fit, Original Cotton, Zinc Grey",
+        name: "SODERHAMN CORNER SECTION COVER",
+        price: "164.50",
+        img: "https://images.bemz.com/productImage/SOD8-CT137-OUTLET319.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material:
+          "Regular Fit, Zaragoza Vintage Velvet by Designers Guild, Eggshell",
+        name: "KIVIK 3 SEATER SOFA COVER",
+        price: "174.30",
+        img: "https://images.bemz.com/productImage/KIV1-DG3010-OUTLET56.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Regular Fit, Panama Cotton, Deep Navy Blue",
+        name: "KIVIK CHAISE LONGUE COVER",
+        price: "124.30",
+        img: "https://images.bemz.com/productImage/KIV6-T123-OUTLET86.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+      {
+        material: "Regular Fit, Panama Cotton, Sage Brown",
+        name: "KIVIK CHAISE LONGUE COVER",
+        price: "174.30",
+        img: "https://images.bemz.com/productImage/KIV6-T117-OUTLET103.jpg?mode=crop&quality=95&width=1920&height=1920&bgc=ebebe6",
+      },
+    ];
+
+    let parent = document.getElementById("products");
+
+    function showProduct() {
+      data.forEach(function (el) {
+        let divs = document.createElement("div");
+        divs.setAttribute("class", "divs");
+
+        let div1 = document.createElement("img");
+
+        let image = document.createElement("img");
+        image.setAttribute("class", "dataimg");
+        image.src = el.img;
+
+        // div1.append(image);
+
+        let matrial = document.createElement("p");
+        matrial.setAttribute("class", "matrial");
+        matrial.textContent = el.material;
+
+        let prodname = document.createElement("p");
+        prodname.setAttribute("class", "prodname");
+        prodname.textContent = el.name;
+
+        let prodprice = document.createElement("p");
+        prodprice.setAttribute("class", "prodprice");
+        prodprice.innerHTML = "US$" + el.price;
+
+        let addtocart = document.createElement("button");
+        addtocart.setAttribute("class", "addtocart");
+        addtocart.textContent = "ADD TO BAG";
+
+        addtocart.onclick = function () {
+          addtoCart(el);
+        };
+        divs.append(image, div1, matrial, prodname, prodprice, addtocart);
+
+        parent.append(divs);
+      });
+    }
+    showProduct();
+
+    if (localStorage.getItem("BEMZ") === null) {
+      localStorage.setItem("BEMZ", JSON.stringify([]));
+    }
+
+    function addtoCart(e) {
+      //  alert("hello")
+      // console.log("e",e)
+
+      let produtcart = JSON.parse(localStorage.getItem("BEMZ"));
+      produtcart.push(e);
+      localStorage.setItem("BEMZ", JSON.stringify(produtcart));
+      console.log("produtcart", produtcart);
+    }
+  </script>
+</html>
