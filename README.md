@@ -1,6 +1,3 @@
-# BEMZ-1
-BEMZ Made to order covers and legs for IKEA furniture and more. #BemzDesign for a chance to get featured.
-
  
 # Bemz-Web-Clone
 
@@ -10,9 +7,9 @@ BEMZ Made to order covers and legs for IKEA furniture and more. #BemzDesign for 
 
 # Welcome :wave:
 
-### About FabBag:
+### About Bemz:
 
-> BEMZ Made to order covers and legs for IKEA furniture and more. #BemzDesign for a chance to get featured. 
+> BEMZ Made to order covers and legs for IKEA furniture and more. #BemzDesign for a chance to get featured. Bemz is your one-stop online shop to find personalised things use for our home purpose. In need of an extra or replacement IKEA couch/sofa cover? Bemz designs beautiful, custom made, machine washable fabric sofa covers for the most popular IKEA sofas.
 
 # About this project ⏬
 
@@ -20,7 +17,7 @@ BEMZ Made to order covers and legs for IKEA furniture and more. #BemzDesign for 
 ``git clone  https://github.com/vkkhambra786/BEMZ-1.git``
 
 ## Go to project directory:- 
-`cd FabBag-Web-Clone`
+`cd Bemz-Web-Clone`
  
 
 ## Deployed Demo link :-
